@@ -1,7 +1,9 @@
-class HSMConnect {
-  host: string;
-  username: string;
-  password: string;
+import { Hsm } from "@dinamonetworks/hsm-dinamo/dist/hsm/interfaces";
+
+export default class HSMConnect {
+  private host: string;
+  private username: string;
+  private password: string;
 
   constructor(host: string, username: string, password: string) {
     this.host = host;
@@ -9,11 +11,15 @@ class HSMConnect {
     this.password = password;
   }
 
-  connect() {
+  connect(): Promise<any> {
     // todo: Implementar conexão HSM
   }
 
-  disconnect() {
+  connectWithToken(): Promise<any> {
+    // todo: Implementar conexão HSM com token
+  }
+
+  disconnect(): void {
     // todo: Implementar desconectar do HSM.
   }
 }
